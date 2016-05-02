@@ -51,6 +51,37 @@ console.log(JSON.stringify(ast, null, 2))
 //    "depth": 1
 //  }
 ```
+
+## API
+
+`m(type, [attributes], [children])` - create a node
+
+```js
+console.log(m('link', { url: 'http://google.com' }, ['Google']))
+//> { type: 'link',
+//    children: [ { type: 'text', value: 'Google' } ],
+//    url: 'http://google.com' }
+```
+
+`m.[type]([attributes], [children])` - create a node
+
+```js
+const code = m.code
+console.log(code({ lang: 'js' }, ['void 0']))
+//> { type: 'code',
+//    children: [ { type: 'text', value: 'void 0' } ],
+//    lang: 'js' }
+```
+
+`m.h[depth]([attributes], [children])` - create a heading node of the specified depth
+
+```js
+const h3 = m.h3
+console.log(h3([paragraph(['Foo bar'])]))
+//> { type: 'heading',
+//    children: [ { type: 'paragraph', children: [Object] } ],
+//    depth: 3 }
+```
 <!--/@-->
 
 <!--@license()-->

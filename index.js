@@ -52,4 +52,15 @@ types.forEach(type => {
   }
 })
 
+;[1, 2, 3, 4, 5, 6].forEach(depth => {
+  markdownScript[`h${depth}`] = function () {
+    const args = argx(arguments)
+    let children = args.pop(Array)
+    const attributes = Object.assign(args.shift(Object) || {}, { depth })
+    const newargs = ['heading', attributes]
+    if (children) newargs.push(children)
+    return markdownScript.apply(null, newargs)
+  }
+})
+
 module.exports = markdownScript

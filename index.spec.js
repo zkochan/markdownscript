@@ -52,4 +52,23 @@ describe('markdownscript', () => {
       ],
     })
   })
+
+  it('should create heading with proper depth', () => {
+    const ast = m.h3([paragraph(['Hello world!'])])
+    expect(ast).to.eql({
+      type: 'heading',
+      depth: 3,
+      children: [
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'text',
+              value: 'Hello world!',
+            },
+          ],
+        },
+      ],
+    })
+  })
 })
