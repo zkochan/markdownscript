@@ -30,14 +30,9 @@ npm install markdownscript --save
 const m = require('markdownscript')
 const heading = m.heading
 const paragraph = m.paragraph
-const text = m.text
 
 const ast = heading({ depth: 1 }, [
-  paragraph([
-    text({
-      value: 'Hello world!',
-    }),
-  ]),
+  paragraph(['Hello world!']),
 ])
 console.log(JSON.stringify(ast, null, 2))
 //> {

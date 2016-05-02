@@ -6,7 +6,10 @@ function markdownScript (type) {
   let attributes = {}
   for (let i = 1; i < arguments.length; i++) {
     if (arguments[i] instanceof Array) {
-      node.children = arguments[i]
+      node.children = arguments[i].map(child => {
+        if (typeof child === 'string') return markdownScript.text({ value: child })
+        return child
+      })
     } else {
       attributes = arguments[i]
     }
