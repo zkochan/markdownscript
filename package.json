@@ -53,7 +53,7 @@
     "ghooks": "^1.2.1",
     "istanbul": "^0.4.2",
     "mocha": "^2.3.4",
-    "mos": "^0.14.2",
+    "mos": "^0.15.0",
     "semantic-release": "^4.3.5",
     "tonic-example": "^0.1.2",
     "validate-commit-msg": "^2.6.1"

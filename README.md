@@ -7,9 +7,7 @@
 <!--/@-->
 
 <!--@shields.flatSquare('npm', 'travis', 'coveralls')-->
-[![NPM version](https://img.shields.io/npm/v/markdownscript.svg?style=flat-square)](https://www.npmjs.com/package/markdownscript)
-[![Build status for master](https://img.shields.io/travis/zkochan/markdownscript/master.svg?style=flat-square)](https://travis-ci.org/zkochan/markdownscript)
-[![Test coverage for master](https://img.shields.io/coveralls/zkochan/markdownscript/master.svg?style=flat-square)](https://coveralls.io/r/zkochan/markdownscript?branch=master)
+[![NPM version](https://img.shields.io/npm/v/markdownscript.svg?style=flat-square)](https://www.npmjs.com/package/markdownscript) [![Build status for master](https://img.shields.io/travis/zkochan/markdownscript/master.svg?style=flat-square)](https://travis-ci.org/zkochan/markdownscript) [![Test coverage for master](https://img.shields.io/coveralls/zkochan/markdownscript/master.svg?style=flat-square)](https://coveralls.io/r/zkochan/markdownscript?branch=master)
 <!--/@-->
 
 <!--@installation()-->
