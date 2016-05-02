@@ -64,7 +64,8 @@ console.log(JSON.stringify(ast, null, 2))
 <!--@dependencies({ shield: 'flat-square' })-->
 ## <a name="dependencies">Dependencies</a> [![Dependency status for master](https://img.shields.io/david/zkochan/markdownscript/master.svg?style=flat-square)](https://david-dm.org/zkochan/markdownscript/master)
 
-None
+- [argx](https://github.com/okunishinishi/node-argx): Parse function arguments. Useful to implement variadic functions.
+
 <!--/@-->
 
 <!--@devDependencies({ shield: 'flat-square' })-->

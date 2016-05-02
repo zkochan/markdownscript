@@ -1,19 +1,20 @@
 'use strict'
 const slice = Array.prototype.slice
+const argx = require('argx')
 
-function markdownScript (type) {
-  let node = { type }
-  let attributes = {}
-  for (let i = 1; i < arguments.length; i++) {
-    if (arguments[i] instanceof Array) {
-      node.children = arguments[i].map(child => {
-        if (typeof child === 'string') return markdownScript.text({ value: child })
-        return child
-      })
-    } else {
-      attributes = arguments[i]
-    }
+function markdownScript () {
+  const args = argx(arguments)
+  const node = {
+    type: args.shift(String),
   }
+  let children = args.pop(Array)
+  if (children) {
+    node.children = children.map(child => {
+      if (typeof child === 'string') return markdownScript.text({ value: child })
+      return child
+    })
+  }
+  const attributes = args.shift(Object) || {}
   return Object.assign(node, attributes)
 }
 
