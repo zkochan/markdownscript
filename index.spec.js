@@ -71,4 +71,31 @@ describe('markdownscript', () => {
       ],
     })
   })
+
+  it('should merge text nodes', () => {
+    const ast = m.paragraph(['Hello ', 'world!', m.link({url: '/foo'}, ['1', '2']), '3', '4'])
+    expect(ast).to.eql({
+      type: 'paragraph',
+      children: [
+        {
+          type: 'text',
+          value: 'Hello world!',
+        },
+        {
+          type: 'link',
+          url: '/foo',
+          children: [
+            {
+              type: 'text',
+              value: '12',
+            },
+          ],
+        },
+        {
+          type: 'text',
+          value: '34',
+        },
+      ],
+    })
+  })
 })

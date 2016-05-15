@@ -9,10 +9,18 @@ function markdownScript () {
   }
   let children = args.pop(Array)
   if (children) {
-    node.children = children.map(child => {
-      if (typeof child === 'string') return markdownScript.text({ value: child })
-      return child
-    })
+    node.children = children
+      .map(child => {
+        if (typeof child === 'string') return markdownScript.text({ value: child })
+        return child
+      })
+      .reduce((merged, child) => {
+        if (child.type === 'text' && merged.length && merged[merged.length - 1].type === 'text') {
+          merged[merged.length - 1].value += child.value
+          return merged
+        }
+        return merged.concat(child)
+      }, [])
   }
   const attributes = args.shift(Object) || {}
   return Object.assign(node, attributes)
