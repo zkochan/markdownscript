@@ -99,6 +99,10 @@ None
 <!--@devDependencies({ shield: 'flat-square' })-->
 ## <a name="dev-dependencies">Dev Dependencies</a> [![devDependency status for master](https://img.shields.io/david/dev/zkochan/markdownscript/master.svg?style=flat-square)](https://david-dm.org/zkochan/markdownscript/master#info=devDependencies)
 
+- [babel-cli](https://github.com/babel/babel/blob/master/packages): Babel command line.
+- [babel-plugin-add-module-exports](https://github.com/59naga/babel-plugin-add-module-exports): Fix babel/babel#2212
+- [babel-preset-es2015](https://github.com/babel/babel/blob/master/packages): Babel preset for all es2015 plugins.
+- [babel-register](https://github.com/babel/babel/blob/master/packages): babel require hook
 - [chai](https://github.com/chaijs/chai): BDD/TDD assertion library for node.js and the browser. Test framework agnostic.
 - [cz-conventional-changelog](https://github.com/commitizen/cz-conventional-changelog): Commitizen adapter following the conventional-changelog format.
 - [eslint](https://github.com/eslint/eslint): An AST-based pattern checker for JavaScript.

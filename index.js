@@ -1,11 +1,10 @@
-'use strict'
 const slice = Array.prototype.slice
 
 function popChildren (args) {
   return args[args.length - 1] instanceof Array ? args.pop() : undefined
 }
 
-function markdownScript (type) {
+export default function markdownScript (type) {
   const args = slice.call(arguments, 1)
   const node = {type}
   const children = popChildren(args)
@@ -71,5 +70,3 @@ types.forEach(type => {
     return markdownScript.apply(null, newargs)
   }
 })
-
-module.exports = markdownScript
