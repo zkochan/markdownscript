@@ -1,12 +1,9 @@
-const slice = Array.prototype.slice
-
 function popChildren (args) {
   return args[args.length - 1] instanceof Array ? args.pop() : undefined
 }
 
-export default function markdownScript (type) {
-  const args = slice.call(arguments, 1)
-  const node = {type}
+export default function markdownScript (type, ...args) {
+  const node = {}
   const children = popChildren(args)
   if (children) {
     node.children = children
@@ -19,11 +16,15 @@ export default function markdownScript (type) {
           merged[merged.length - 1].value += child.value
           return merged
         }
-        return merged.concat(child)
+        return [...merged, child]
       }, [])
   }
   const attributes = args.shift() || {}
-  return Object.assign(node, attributes)
+  return {
+    type,
+    ...node,
+    ...attributes,
+  }
 }
 
 const types = [
@@ -55,18 +56,18 @@ const types = [
 ]
 
 types.forEach(type => {
-  markdownScript[type] = function () {
-    return markdownScript.apply(null, [type].concat(slice.call(arguments)))
-  }
+  markdownScript[type] = (...args) => markdownScript(type, ...args)
 })
 
 ;[1, 2, 3, 4, 5, 6].forEach(depth => {
-  markdownScript[`h${depth}`] = function () {
-    const args = slice.call(arguments)
+  markdownScript[`h${depth}`] = function (...args) {
     const children = popChildren(args)
-    const attributes = Object.assign(args.shift() || {}, { depth })
+    const attributes = {
+      ...(args.shift() || {}),
+      depth,
+    }
     const newargs = ['heading', attributes]
     if (children) newargs.push(children)
-    return markdownScript.apply(null, newargs)
+    return markdownScript(...newargs)
   }
 })

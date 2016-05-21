@@ -13,6 +13,9 @@ before_install:
 install:
   - npm install
 
+script:
+  - npm test
+  - if [[ $TRAVIS_NODE_VERSION != "v0.10" ]]; then npm run test:md; fi;
 after_success:
   - npm run coveralls
   - npm run semantic-release
