@@ -1,13 +1,14 @@
 'use strict'
 const slice = Array.prototype.slice
-const argx = require('argx')
 
-function markdownScript () {
-  const args = argx(arguments)
-  const node = {
-    type: args.shift(String),
-  }
-  let children = args.pop(Array)
+function popChildren (args) {
+  return args[args.length - 1] instanceof Array ? args.pop() : undefined
+}
+
+function markdownScript (type) {
+  const args = slice.call(arguments, 1)
+  const node = {type}
+  const children = popChildren(args)
   if (children) {
     node.children = children
       .map(child => {
@@ -22,7 +23,7 @@ function markdownScript () {
         return merged.concat(child)
       }, [])
   }
-  const attributes = args.shift(Object) || {}
+  const attributes = args.shift() || {}
   return Object.assign(node, attributes)
 }
 
@@ -62,9 +63,9 @@ types.forEach(type => {
 
 ;[1, 2, 3, 4, 5, 6].forEach(depth => {
   markdownScript[`h${depth}`] = function () {
-    const args = argx(arguments)
-    let children = args.pop(Array)
-    const attributes = Object.assign(args.shift(Object) || {}, { depth })
+    const args = slice.call(arguments)
+    const children = popChildren(args)
+    const attributes = Object.assign(args.shift() || {}, { depth })
     const newargs = ['heading', attributes]
     if (children) newargs.push(children)
     return markdownScript.apply(null, newargs)
