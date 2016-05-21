@@ -42,6 +42,11 @@
     "url": "https://github.com/zkochan/markdownscript/issues"
   },
   "homepage": "https://github.com/zkochan/markdownscript#readme",
+  "mos": {
+    "installation": {
+      "useShortAlias": true
+    }
+  },
   "tonicExampleFilename": "tonic-example.js",
   "devDependencies": {
     "babel-cli": "^6.9.0",
@@ -57,7 +62,7 @@
     "ghooks": "^1.2.1",
     "istanbul": "^1.0.0-alpha.2",
     "mocha": "^2.3.4",
-    "mos": "^0.15.0",
+    "mos": "^1.1.1",
     "semantic-release": "^4.3.5",
     "tonic-example": "^0.1.2",
     "validate-commit-msg": "^2.6.1"

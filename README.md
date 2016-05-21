@@ -1,24 +1,20 @@
-<!--@'# ' + package.name-->
+<!--@'# ' + pkg.name-->
 # markdownscript
 <!--/@-->
 
-<!--@'> ' + package.description-->
+<!--@'> ' + pkg.description-->
 > Creates markdown Abstract Syntax Tree
 <!--/@-->
 
 <!--@shields.flatSquare('npm', 'travis', 'coveralls')-->
-[![NPM version](https://img.shields.io/npm/v/markdownscript.svg?style=flat-square)](https://www.npmjs.com/package/markdownscript) [![Build status for master](https://img.shields.io/travis/zkochan/markdownscript/master.svg?style=flat-square)](https://travis-ci.org/zkochan/markdownscript) [![Test coverage for master](https://img.shields.io/coveralls/zkochan/markdownscript/master.svg?style=flat-square)](https://coveralls.io/r/zkochan/markdownscript?branch=master)
+[![npm version](https://img.shields.io/npm/v/markdownscript.svg?style=flat-square)](https://www.npmjs.com/package/markdownscript) [![Build Status](https://img.shields.io/travis/zkochan/markdownscript/master.svg?style=flat-square)](https://travis-ci.org/zkochan/markdownscript) [![Coverage Status](https://img.shields.io/coveralls/zkochan/markdownscript/master.svg?style=flat-square)](https://coveralls.io/r/zkochan/markdownscript?branch=master)
 <!--/@-->
 
-<!--@installation()-->
 ## Installation
 
-This module is installed via npm:
-
 ```sh
-npm install markdownscript --save
+npm i -S markdownscript
 ```
-<!--/@-->
 
 ## Usage
 
@@ -82,22 +78,20 @@ console.log(h3([paragraph(['Foo bar'])]))
 ```
 <!--/@-->
 
-<!--@license()-->
 ## License
 
 [MIT](./LICENSE) © [Zoltan Kochan](http://kochan.io)
-<!--/@-->
 
 * * *
 
 <!--@dependencies({ shield: 'flat-square' })-->
-## <a name="dependencies">Dependencies</a> [![Dependency status for master](https://img.shields.io/david/zkochan/markdownscript/master.svg?style=flat-square)](https://david-dm.org/zkochan/markdownscript/master)
+## <a name="dependencies">Dependencies</a> [![dependency status](https://img.shields.io/david/zkochan/markdownscript/master.svg?style=flat-square)](https://david-dm.org/zkochan/markdownscript/master)
 
 None
 <!--/@-->
 
 <!--@devDependencies({ shield: 'flat-square' })-->
-## <a name="dev-dependencies">Dev Dependencies</a> [![devDependency status for master](https://img.shields.io/david/dev/zkochan/markdownscript/master.svg?style=flat-square)](https://david-dm.org/zkochan/markdownscript/master#info=devDependencies)
+## <a name="dev-dependencies">Dev Dependencies</a> [![devDependency status](https://img.shields.io/david/dev/zkochan/markdownscript/master.svg?style=flat-square)](https://david-dm.org/zkochan/markdownscript/master#info=devDependencies)
 
 - [babel-cli](https://github.com/babel/babel/blob/master/packages): Babel command line.
 - [babel-plugin-add-module-exports](https://github.com/59naga/babel-plugin-add-module-exports): Fix babel/babel#2212
@@ -112,7 +106,7 @@ None
 - [ghooks](https://github.com/gtramontina/ghooks): Simple git hooks
 - [istanbul](https://github.com/gotwarlost/istanbul): Yet another JS code coverage tool that computes statement, line, function and branch coverage with module loader hooks to transparently add coverage when running tests. Supports all JS coverage use cases including unit tests, server side functional tests
 - [mocha](https://github.com/mochajs/mocha): simple, flexible, fun test framework
-- [mos](https://github.com/zkochan/mos): A pluggable module that injects content into your markdown files via hidden JavaScript snippets
+- [mos](https://github.com/mosjs/mos): A pluggable module that injects content into your markdown files via hidden JavaScript snippets
 - [semantic-release](https://github.com/semantic-release/semantic-release): automated semver compliant package publishing
 - [tonic-example](https://github.com/zkochan/tonic-example): Tonic example generator
 - [validate-commit-msg](https://github.com/kentcdodds/validate-commit-msg): Script to validate a commit message follows the conventional changelog standard
