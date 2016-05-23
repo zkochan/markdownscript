@@ -21,11 +21,11 @@ npm i -S markdownscript
 <!--@example('./example.js')-->
 ```js
 'use strict'
-const m = require('markdownscript')
-const heading = m.heading
-const paragraph = m.paragraph
+var m = require('markdownscript')
+var heading = m.heading
+var paragraph = m.paragraph
 
-const ast = heading({ depth: 1 }, [
+var ast = heading({ depth: 1 }, [
   paragraph(['Hello world!']),
 ])
 console.log(JSON.stringify(ast, null, 2))
@@ -60,7 +60,7 @@ console.log(m('link', { url: 'http://google.com' }, ['Google']))
 `m.[type]([attributes], [children])` - create a node
 
 ```js
-const code = m.code
+var code = m.code
 console.log(code({ lang: 'js' }, ['void 0']))
 //> { type: 'code',
 //    children: [ { type: 'text', value: 'void 0' } ],
@@ -70,7 +70,7 @@ console.log(code({ lang: 'js' }, ['void 0']))
 `m.h[depth]([attributes], [children])` - create a heading node of the specified depth
 
 ```js
-const h3 = m.h3
+var h3 = m.h3
 console.log(h3([paragraph(['Foo bar'])]))
 //> { type: 'heading',
 //    children: [ { type: 'paragraph', children: [Object] } ],

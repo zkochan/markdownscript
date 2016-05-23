@@ -10,9 +10,8 @@
   "main": "dist/index.js",
   "jsnext:main": "index.js",
   "scripts": {
-    "test:md": "mos test",
-    "test": "mocha --compilers js:babel-register && npm run lint",
-    "lint": "eslint lib/**/*.js index.js",
+    "test": "mocha --compilers js:babel-register && npm run lint && mos test",
+    "lint": "eslint index.js index.spec.js example.js",
     "commit": "git-cz",
     "coverage": "istanbul cover -x \"**/*.spec.js\" node_modules/mocha/bin/_mocha -- --compilers js:babel-register -R spec",
     "precoveralls": "istanbul cover -x \"**/*.spec.js\" node_modules/mocha/bin/_mocha --report lcovonly -- --compilers js:babel-register -R spec && npm i coveralls@2",
@@ -65,7 +64,7 @@
     "ghooks": "^1.2.1",
     "istanbul": "^1.0.0-alpha.2",
     "mocha": "^2.3.4",
-    "mos": "^1.1.1",
+    "mos": "^1.2.0",
     "semantic-release": "^4.3.5",
     "tonic-example": "^0.2.0",
     "validate-commit-msg": "^2.6.1"
